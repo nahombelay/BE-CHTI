@@ -1,0 +1,9 @@
+Server : vpn.insa-toulouse.fr
+Port : 443
+Username : Login INSA
+Password : Password INSA
+ssh belay@srv-ens.insa-toulouse.fr
+
+
+scp username@remote_1:/file/to/send username@remote_2:/where/to/put
+scp -r belay@srv-ens.insa-toulouse.fr:/home/belay/Analyse/*.ipynb ~/Desktop
