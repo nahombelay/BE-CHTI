@@ -1,0 +1,64 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 thumb
+    2 00000000                 AREA             Reel, code, READONLY
+    3 00000000         
+    4 00000000                 export           reel
+    5 00000000         
+    6 00000000         reel    proc
+    7 00000000         
+    8 00000000         
+    9 00000000         endp
+   10 00000000         end
+                       
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M3 --apcs=interw
+ork --depend=.\obj\reel.d -o.\obj\reel.o -I.\RTE\_Simu -I"C:\Users\Florian Leon
+\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include" -I"C:\Users\Floria
+n Leon\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include" --prede
+fine="__EVAL SETA 1" --predefine="__MICROLIB SETA 1" --predefine="__UVISION_VER
+SION SETA 529" --predefine="_RTE_ SETA 1" --predefine="STM32F10X_MD SETA 1" --l
+ist=reel.lst reel.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+Reel 00000000
+
+Symbol: Reel
+   Definitions
+      At line 2 in file reel.s
+   Uses
+      None
+Comment: Reel unused
+end 00000000
+
+Symbol: end
+   Definitions
+      At line 10 in file reel.s
+   Uses
+      None
+Comment: end unused
+endp 00000000
+
+Symbol: endp
+   Definitions
+      At line 9 in file reel.s
+   Uses
+      None
+Comment: endp unused
+reel 00000000
+
+Symbol: reel
+   Definitions
+      At line 6 in file reel.s
+   Uses
+      At line 4 in file reel.s
+Comment: reel used once
+4 symbols
+339 symbols in table
