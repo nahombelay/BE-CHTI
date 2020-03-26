@@ -1,5 +1,5 @@
 #include "gassp72.h"
-#include <stdlib.h>
+#include <stdio.h>
 //part 1
 int Periode_en_Tck = 100; //A determiner
 void timer_callback(void);
@@ -8,8 +8,10 @@ int currentVal = 0;
 //part 2
 extern short TabCos;
 extern short TabSin;
+extern short TabSig;
 int reel(short *, int, short *);
 int test(short);
+
 
 
 
@@ -33,7 +35,14 @@ int main(void)
 //Run_Timer( TIM4 );
 
 
-test(63);
+//test(63);
+short N = 64;
+short res = 0;
+int k = 1;
+
+
+res = reel(&TabSig,k,&TabCos);
+
 
 while	(1) {}
 

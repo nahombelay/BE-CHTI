@@ -8,4 +8,4 @@
 .\obj\principal.o: C:\Users\Florian Leon\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_compiler.h
 .\obj\principal.o: C:\Users\Florian Leon\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_armcc.h
 .\obj\principal.o: C:\Users\Florian Leon\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include\system_stm32f10x.h
-.\obj\principal.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\obj\principal.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h

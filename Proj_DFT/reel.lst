@@ -8,13 +8,23 @@ ARM Macro Assembler    Page 1
     2 00000000                 AREA             Reel, code, READONLY
     3 00000000         
     4 00000000                 export           reel
-    5 00000000         
-    6 00000000         reel    proc
-    7 00000000         
-    8 00000000         
-    9 00000000         endp
-   10 00000000         end
-                       
+    5 00000000         ;extern TabSig
+    6 00000000         
+    7 00000000         reel    proc
+    8 00000000         ;&TabSig[i] dans r0 ;valeur de i*k dans r1 ;adresse de T
+                       abCos dans r2 ;(mettre dans la pile)
+    9 00000000         ;x(i) donc r0 * tabCos[i*k]
+   10 00000000 F932 3011       ldrsh            r3, [r2, r1, lsl #1]
+   11 00000004         ;push {r0}
+   12 00000004 F9B0 0000       ldrsh            r0, [r0]
+   13 00000008 FB00 F003       mul              r0, r0, r3
+   14 0000000C         ;pop {r0}
+   15 0000000C 4770            bx               lr
+   16 0000000E         
+   17 0000000E         
+   18 0000000E         
+   19 0000000E                 endp
+   20 0000000E                 end
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M3 --apcs=interw
 ork --depend=.\obj\reel.d -o.\obj\reel.o -I.\RTE\_Simu -I"C:\Users\Florian Leon
 \AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include" -I"C:\Users\Floria
@@ -36,29 +46,13 @@ Symbol: Reel
    Uses
       None
 Comment: Reel unused
-end 00000000
-
-Symbol: end
-   Definitions
-      At line 10 in file reel.s
-   Uses
-      None
-Comment: end unused
-endp 00000000
-
-Symbol: endp
-   Definitions
-      At line 9 in file reel.s
-   Uses
-      None
-Comment: endp unused
 reel 00000000
 
 Symbol: reel
    Definitions
-      At line 6 in file reel.s
+      At line 7 in file reel.s
    Uses
       At line 4 in file reel.s
 Comment: reel used once
-4 symbols
-339 symbols in table
+2 symbols
+337 symbols in table
