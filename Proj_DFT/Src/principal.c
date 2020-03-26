@@ -36,12 +36,13 @@ int main(void)
 
 
 //test(63);
-short N = 64;
-short res = 0;
-int k = 1;
+//short N = 64;
+int res = 0;
+int k = 40;
 
 
-res = reel(&TabSig,k,&TabCos);
+res = reel(&TabSig,k,&TabCos); //je sais pas comment retrouver le resultat à la fin :/
+printf("%d", res);
 
 
 while	(1) {}
