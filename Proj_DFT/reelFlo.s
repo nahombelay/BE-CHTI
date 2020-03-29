@@ -2,7 +2,6 @@
 	AREA Reel, code, READONLY
 	
 	export reel
-	extern res
 	;extern TabSig
 
 reel proc
@@ -11,7 +10,6 @@ reel proc
 	mov	r8, lr	;sinon ca bloque à la fin et je ne peux pas retourner au main
 	push	{r8}
 	push	{lr}
-	ldr		r10, =res ; copie l'adresse de res dans r10
 	push	{r4}	;pour le resultat
 	;b	for
 ;boucle for
@@ -35,7 +33,6 @@ for	add	r3,#1
 	
 fin	pop	{r7}
 	mov	r0, r4	;on recupere le res final
-	str r4, [r10] ; stocker la valeur de r4 dans res
 	pop	{r4}
 	pop	{lr}
 	pop	{r8}

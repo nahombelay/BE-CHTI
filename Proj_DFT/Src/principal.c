@@ -4,6 +4,7 @@
 int Periode_en_Tck = 100; //A determiner
 void timer_callback(void);
 int currentVal = 0;
+int res;
 
 //part 2
 extern short TabCos;
@@ -37,7 +38,7 @@ int main(void)
 
 //test(63);
 //short N = 64;
-int res = 0;
+res = 0;
 int k = 40;
 
 
