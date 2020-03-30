@@ -10,9 +10,11 @@ int res;
 extern short TabCos;
 extern short TabSin;
 extern short TabSig;
-int reel(short *, int, short *);
+//int reel(short *, int, short *);
+int dftint(short *, int, short *);
 int test(short);
-int tabres[64];
+int TabRes[64];
+int res = 0;
 
 
 
@@ -37,14 +39,14 @@ int main(void)
 
 //test(63);
 //short N = 64;
-int res = 0;
+
 //int k = 40;
 
 for (int k = 0; k < 64; k++) {
-	res = reel(&TabSig,k,&TabCos);
-	tabres[k] = res;
+	res = dftint(&TabSig,k,&TabCos);
+	TabRes[k] = res;
 }
-//printf("%d", res);
+
 
 
 while	(1) {}

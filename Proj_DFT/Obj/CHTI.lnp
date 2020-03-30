@@ -5,6 +5,7 @@
 ".\obj\reel.o"
 ".\obj\test.o"
 ".\obj\signal.o"
+".\obj\dftint.o"
 ".\obj\startup-rvds.o"
 "..\..\..\GASSP72\GASSP72\gassp72.lib"
 --library_type=microlib --strict --scatter ".\Obj\CHTI.sct"

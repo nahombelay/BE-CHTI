@@ -1,9 +1,9 @@
 	thumb
 	AREA DFTint, code, READONLY
 	
-	export DFTint
+	export dftint
 		
-DFTint	proc
+dftint	proc
 ;TabSig dans r0 ;valeur de k dans r1 ;adresse de TabCos dans r2 
 	push	{lr, r4, r5, r6}	
 ;initialisation
