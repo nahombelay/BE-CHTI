@@ -12,7 +12,7 @@ extern short TabSin;
 extern short TabSig;
 int reel(short *, int, short *);
 int test(short);
-
+int tabres[64];
 
 
 
@@ -35,15 +35,16 @@ int main(void)
 // lancement du timer
 //Run_Timer( TIM4 );
 
-
 //test(63);
 //short N = 64;
-res = 0;
-int k = 40;
+int res = 0;
+//int k = 40;
 
-
-res = reel(&TabSig,k,&TabCos); //je sais pas comment retrouver le resultat à la fin :/
-printf("%d", res);
+for (int k = 0; k < 64; k++) {
+	res = reel(&TabSig,k,&TabCos);
+	tabres[k] = res;
+}
+//printf("%d", res);
 
 
 while	(1) {}

@@ -11,14 +11,14 @@ reel proc
 	mov	r8, lr	;sinon ca bloque à la fin et je ne peux pas retourner au main
 	push	{r8}
 	push	{lr}
-	ldr		r10, =res ; copie l'adresse de res dans r10
-	push	{r4}	;pour le resultat
+	ldr	r10, =res ; copie l'adresse de res dans r10
+	push	{r11}	;pour le resultat
 	;b	for
 ;boucle for
 	mov	r3, #0	;i ; initialisation (c'est le premier tour de la boucle)
 	push	{r7}
 	mul	r7, r1, r3	;r1 contient i * k normalement 0 à la premiere itération
-	mov	r4, #0	;res
+	mov	r11, #0	;res
 	bl	ope	
 ;on incremente i
 for	add	r3,#1 
@@ -29,28 +29,28 @@ for	add	r3,#1
 	cmp	r7, #64
 	bge	modulo		;si i * k >= 64
 ;donc ici normalement i * k < 64
-	push	{lr}
+	;push	{lr}
 	bl	ope
-	pop	{PC}
+	;pop	{PC}
 	
 fin	pop	{r7}
-	mov	r0, r4	;on recupere le res final
-	str r4, [r10] ; stocker la valeur de r4 dans res
-	pop	{r4}
+	mov	r0, r11	;on recupere le res final
+	str 	r11, [r10] ; stocker la valeur de r4 dans res
+	pop	{r11}
 	pop	{lr}
-	pop	{r8}
-	mov	lr, r8
+	;pop	{r8}
+	;mov	r4, r1
+	;mov	lr, r8 ;fonctionne sans cette ligne ce qui devrait pas etre le cas...
 	bx	lr	;on retourne au main
 
 
-ope	
-	push	{r5}
+ope	push	{r5}
 	;ldrsh	r5, [r2, r1, lsl #1]	;valeur de cos
 	ldrsh	r5, [r2, r7, lsl #1]
 	push	{r6}
-	ldrsh	r6, [r0]	;valeur du sig
+	ldrsh	r6, [r0, r3, lsl #1]	;valeur du sig
 	mul	r6, r0, r5
-	add	r4, r6
+	add	r11, r6
 	pop	{r6}
 	pop	{r5}
 	bl	for
