@@ -1,8 +1,7 @@
 # BE CHTI
 ---
 ######  Florian Leon et Nahom Belay
-#
-#
+
 ---
 ## Etape 1 : Signal carré de précision
 
