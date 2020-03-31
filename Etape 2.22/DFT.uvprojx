@@ -402,6 +402,11 @@
               <FileType>2</FileType>
               <FilePath>.\src\DFTint.s</FilePath>
             </File>
+            <File>
+              <FileName>module.s</FileName>
+              <FileType>2</FileType>
+              <FilePath>.\Src\module.s</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -824,6 +829,11 @@
               <FileName>DFTint.s</FileName>
               <FileType>2</FileType>
               <FilePath>.\src\DFTint.s</FilePath>
+            </File>
+            <File>
+              <FileName>module.s</FileName>
+              <FileType>2</FileType>
+              <FilePath>.\Src\module.s</FilePath>
             </File>
           </Files>
         </Group>

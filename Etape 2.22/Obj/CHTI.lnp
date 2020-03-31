@@ -3,6 +3,7 @@
 ".\obj\trigo.o"
 ".\obj\signal.o"
 ".\obj\dftint.o"
+".\obj\module.o"
 ".\obj\startup-rvds.o"
 ".\Src\gassp72.lib"
 --library_type=microlib --strict --scatter ".\Obj\CHTI.sct"

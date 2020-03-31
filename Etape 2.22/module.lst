@@ -1,0 +1,118 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 thumb
+    2 00000000                 AREA             Module, code, READONLY
+    3 00000000         ;La valeur de retour est obtenue par sommation des carré
+                       s effectuée sur 64 bits signés 
+    4 00000000         ;puis ramenée à 32 bits en ne conservant que les 32 bits
+                        de fort poids
+    5 00000000                 export           module
+    6 00000000                 extern           dftint      ; qui prend tabsig,
+                                                             k et tabcos/tabsin
+                                                            
+    7 00000000                 extern           TabCos
+    8 00000000                 extern           TabSin
+    9 00000000         
+   10 00000000         module  proc
+   11 00000000         ;r0 addresse du signal
+   12 00000000         ;r1 valeur de k
+   13 00000000         ;r2 va servir a recuperer l'addresse de TabCos ou de Tab
+                       Sin
+   14 00000000         ;r3 et r4 pour stocker la multiplication signé sur 64 bi
+                       ts du cos
+   15 00000000         ;r5 et r6 pour stocker la multiplication signé sur 64 bi
+                       ts su sin
+   16 00000000         ;r12 pour stocker le retour de dftint
+   17 00000000 B570            push             {lr, r4, r5, r6}
+   18 00000002 4A0A            ldr              r2, =TabCos
+   19 00000004 B401            push             {r0}
+   20 00000006 F7FF FFFE       bl               dftint
+   21 0000000A 4684            mov              r12, r0
+   22 0000000C FBC0 3400       smlal            r3, r4, r0, r0 ;dans r3 et r4 o
+                                                            n a le carré du cos
+                                                            
+   23 00000010 BC01            pop              {r0}
+   24 00000012         
+   25 00000012 4A07            ldr              r2, =TabSin
+   26 00000014 B401            push             {r0}
+   27 00000016 F7FF FFFE       bl               dftint
+   28 0000001A 4684            mov              r12, r0
+   29 0000001C FBC0 5600       smlal            r5, r6, r0, r0 ;dans r5 et r6 o
+                                                            n a le carré du sin
+                                                            
+   30 00000020 BC01            pop              {r0}
+   31 00000022 EB04 0006       add              r0, r4, r6
+   32 00000026         
+   33 00000026 E8BD 4070       pop              {lr, r4, r5, r6}
+   34 0000002A 4770            bx               lr
+   35 0000002C                 endp
+   36 0000002C                 end
+              00000000 
+              00000000 
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M3 --apcs=interw
+ork --depend=.\obj\module.d -o.\obj\module.o -I.\RTE\_Simu -I"C:\Users\Florian 
+Leon\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include" -I"C:\Users\Fl
+orian Leon\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include" --p
+redefine="__EVAL SETA 1" --predefine="__MICROLIB SETA 1" --predefine="__UVISION
+_VERSION SETA 529" --predefine="_RTE_ SETA 1" --predefine="STM32F10X_MD SETA 1"
+ --list=module.lst Src\module.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+Module 00000000
+
+Symbol: Module
+   Definitions
+      At line 2 in file Src\module.s
+   Uses
+      None
+Comment: Module unused
+module 00000000
+
+Symbol: module
+   Definitions
+      At line 10 in file Src\module.s
+   Uses
+      At line 5 in file Src\module.s
+Comment: module used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+External symbols
+
+TabCos 00000000
+
+Symbol: TabCos
+   Definitions
+      At line 7 in file Src\module.s
+   Uses
+      At line 18 in file Src\module.s
+Comment: TabCos used once
+TabSin 00000000
+
+Symbol: TabSin
+   Definitions
+      At line 8 in file Src\module.s
+   Uses
+      At line 25 in file Src\module.s
+Comment: TabSin used once
+dftint 00000000
+
+Symbol: dftint
+   Definitions
+      At line 6 in file Src\module.s
+   Uses
+      At line 20 in file Src\module.s
+      At line 27 in file Src\module.s
+
+3 symbols
+342 symbols in table

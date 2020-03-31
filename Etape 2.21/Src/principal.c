@@ -1,11 +1,10 @@
-/*Partie 2.2.2*/
+/*Partie 2.2.1*/
 #include "gassp72.h"
 
 extern short TabCos;
 extern short TabSin;
 extern short TabSig;
 int dftint(short *, int, short *);
-int module(short *, int);
 int TabReel[64];
 int TabIm[64];
 //int res = 0;

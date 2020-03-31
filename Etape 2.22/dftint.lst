@@ -12,7 +12,7 @@ ARM Macro Assembler    Page 1
     6 00000000         dftint  proc
     7 00000000         ;TabSig dans r0 ;valeur de k dans r1 ;adresse de TabCos 
                        dans r2 
-    8 00000000 B570            push             {lr, r4, r5, r6}
+    8 00000000 B470            push             {r4, r5, r6}
     9 00000002         ;initialisation
    10 00000002 F04F 0300       mov              r3, #0      ;i ; initialisation
                                                              (c'est le premier 
@@ -34,16 +34,16 @@ ARM Macro Assembler    Page 1
    20 00000016 F930 6013       ldrsh            r6, [r0, r3, lsl #1]
    21 0000001A         ; on ajoute le produit dans r4
    22 0000001A FB05 4406       mla              r4, r5, r6, r4
-   23 0000001E F103 0301       add              r3, #1
-   24 00000022 FB01 FC03       mul              r12, r1, r3
+   23 0000001E FB01 FC03       mul              r12, r1, r3
+   24 00000022 F103 0301       add              r3, #1
    25 00000026 2B40            cmp              r3, #64
    26 00000028 DBF1            blt              debfor
    27 0000002A         ;fin for
    28 0000002A 4620            mov              r0, r4
-   29 0000002C E8BD 4070       pop              {lr, r4, r5, r6}
-   30 00000030 4770            bx               lr
-   31 00000032                 endp
-   32 00000032                 end
+   29 0000002C BC70            pop              {r4, r5, r6}
+   30 0000002E 4770            bx               lr
+   31 00000030                 endp
+   32 00000030                 end
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M3 --apcs=interw
 ork --depend=.\obj\dftint.d -o.\obj\dftint.o -I.\RTE\_Simu -I"C:\Users\Florian 
 Leon\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include" -I"C:\Users\Fl

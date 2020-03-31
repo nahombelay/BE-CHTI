@@ -13,15 +13,15 @@ dftint	proc
 
 ;debut for
 	; on fait le modulo de r12 (i*k)
-debfor	and 	r12, r12, #0x40
+debfor	and 	r12, r12, #0x3F
 	; on met dans r5 la valeur du cos(i*k)
 	ldrsh	r5, [r2, r12, lsl #1]
 	; on met dans r6 la valeur du signal(k)
 	ldrsh	r6, [r0, r3, lsl #1]
 	; on ajoute le produit dans r4
 	mla	r4, r5, r6, r4
-	mul	r12, r1, r3
 	add 	r3, #1
+	mul	r12, r1, r3
 	cmp	r3, #64
 	blt	debfor
 ;fin for
