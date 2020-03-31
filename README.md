@@ -14,11 +14,11 @@
 >On vérifie cos^2(a) + sin^2(a) = 1 (code dans **test.s**)
      
   ### Partie 2 : Calcul DFT
-    #### Question 1 (étape 2.21)
+   #### Question 1 (étape 2.21)
 >On a donc repris le code dans dftinit (on a donné un nom "générique" pour eviter toute confusion lorsqu'on appelle cette fonction pour calculer la partie imaginaire (avec TabSin plutôt que TabCos).
 >Le code avec dftinit fonctioonne et renvoie le résultat attendu
 
-    #### Question 2 et 3 (étape 2.22)
+   #### Question 2 et 3 (étape 2.22)
 >La fonction module fonctionne et renvoie bien le résultat voulu.
 >**NB :** Les tests ont effectués pour un signal ayant une fréquence de 1, un phase de 0 et  N = 64 uniquement
 ---
