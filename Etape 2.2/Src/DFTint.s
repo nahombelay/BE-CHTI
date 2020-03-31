@@ -13,7 +13,7 @@ dftint	proc
 
 ;debut for
 	; on fait le modulo de r12 (i*k)
-debfor	and 	r12, r12, #0x3f
+debfor	and 	r12, r12, #0x40
 	; on met dans r5 la valeur du cos(i*k)
 	ldrsh	r5, [r2, r12, lsl #1]
 	; on met dans r6 la valeur du signal(k)

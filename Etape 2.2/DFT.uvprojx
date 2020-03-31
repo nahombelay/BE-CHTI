@@ -393,11 +393,6 @@
               <FilePath>.\src\trigo.s</FilePath>
             </File>
             <File>
-              <FileName>reel.s</FileName>
-              <FileType>2</FileType>
-              <FilePath>.\src\reel.s</FilePath>
-            </File>
-            <File>
               <FileName>signal.s</FileName>
               <FileType>2</FileType>
               <FilePath>.\src\signal.s</FilePath>
@@ -819,11 +814,6 @@
               <FileName>trigo.s</FileName>
               <FileType>2</FileType>
               <FilePath>.\src\trigo.s</FilePath>
-            </File>
-            <File>
-              <FileName>reel.s</FileName>
-              <FileType>2</FileType>
-              <FilePath>.\src\reel.s</FilePath>
             </File>
             <File>
               <FileName>signal.s</FileName>
