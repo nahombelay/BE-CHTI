@@ -20,7 +20,7 @@ int main(void)
 
 for (int k = 0; k < 64; k++) {
 	//changer la variable tabsig en fonction de ce qu'on veut tester
-	tabMod[k] = module(&TabSig, k);
+	tabMod[k] = module(&TabSig3, k);
 	
 }
 

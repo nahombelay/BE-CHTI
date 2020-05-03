@@ -32,7 +32,7 @@ ARM Macro Assembler    Page 1
    19 00000004 B401            push             {r0}
    20 00000006 F7FF FFFE       bl               dftint
    21 0000000A 4684            mov              r12, r0
-   22 0000000C FBC0 3400       smlal            r3, r4, r0, r0 ;dans r3 et r4 o
+   22 0000000C FB80 3400       smull            r3, r4, r0, r0 ;dans r3 et r4 o
                                                             n a le carré du cos
                                                             
    23 00000010 BC01            pop              {r0}
@@ -41,7 +41,7 @@ ARM Macro Assembler    Page 1
    26 00000014 B401            push             {r0}
    27 00000016 F7FF FFFE       bl               dftint
    28 0000001A 4684            mov              r12, r0
-   29 0000001C FBC0 5600       smlal            r5, r6, r0, r0 ;dans r5 et r6 o
+   29 0000001C FB80 5600       smull            r5, r6, r0, r0 ;dans r5 et r6 o
                                                             n a le carré du sin
                                                             
    30 00000020 BC01            pop              {r0}

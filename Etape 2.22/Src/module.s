@@ -19,14 +19,14 @@ module proc
 	push	{r0}
 	bl	dftint
 	mov	r12, r0
-	smlal	r3, r4, r0, r0 ;dans r3 et r4 on a le carré du cos
+	smull	r3, r4, r0, r0 ;dans r3 et r4 on a le carré du cos
 	pop	{r0}
 
 	ldr	r2, =TabSin
 	push	{r0}
 	bl	dftint
 	mov	r12, r0
-	smlal	r5, r6, r0, r0 ;dans r5 et r6 on a le carré du sin
+	smull	r5, r6, r0, r0 ;dans r5 et r6 on a le carré du sin
 	pop	{r0}
 	add	r0, r4, r6
 
