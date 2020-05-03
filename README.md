@@ -26,6 +26,7 @@
 >Test marche bien avec le jeu de données fournis. Dans la fonction principale, il suffit de remplacer la variable TabSig par la varaible correspondant à au signal que l'on veut étudier. On place trois points d'arrêt dans la fonction module:
 >- une à la ligne 21, ce qui permet de récupérer la partie réele dans le registre r12
 >- une à la ligne 28, ce qui permet de récupérer la pratie imaginaire dans le registre r12
->- une à la ligne 31, ce qui nous permet de récupérer la module dans le registre r0
+>- une à la ligne 31, ce qui nous permet de récupérer la module dans le registre r0.
+
 >**NB :** le résultat du module ne correspond pas exactement à ce qui données dans le jeu de données (à 10^-5 ou 10^-7 près)
 ---
