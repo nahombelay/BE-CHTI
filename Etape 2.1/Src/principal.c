@@ -5,7 +5,6 @@ extern short TabCos;
 extern short TabSin;
 int test(short);
 int TabRes[64];
-int res = 0;
 
 
 
@@ -14,9 +13,8 @@ short angle;
 int main(void)
 {
 
-for (short k = 0; k < 64; k++) {
-	res = test(k);
-	TabRes[k] = res;
+for (int k = 0; k < 64; k++) {
+	TabRes[k] = test(k);
 }
 
 while	(1) {}
