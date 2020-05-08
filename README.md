@@ -12,11 +12,13 @@
 
   ### Partie 1 : Préliminaires, tables trigo
 >On vérifie cos^2(a) + sin^2(a) = 1 (code dans **test.s**)
+>Pour vérifier ces résultats, on a stocké dans TabRes les valeurs de cos(k)^2 + sin(k)^2 pour k allant de 0 à 63 qu'on visualise avec Watch 1. cos(k) et sin(k) sont codés au format 1.15 donc leurs carré ainsi que la somme des carrés est codé au format 2.30.
      
   ### Partie 2 : Calcul DFT
    #### Question 1 (étape 2.21)
+>Cette étape permet de vérifier que le calcul de notre partie réelle et imaginaire fonctionne bien.
 >On a donc repris le code dans dftinit (on a donné un nom "générique" pour eviter toute confusion lorsqu'on appelle cette fonction pour calculer la partie imaginaire (avec TabSin plutôt que TabCos).
->Le code avec dftinit fonctioonne et renvoie le résultat attendu
+>Les résultats sont stockés dans deux tableaux TabReel et TabIm qu'on peut visualiser avec le Watch.
 
    #### Question 2 et 3 (étape 2.22)
 >La fonction module fonctionne et renvoie bien le résultat voulu (deux pics d'amplitutde proche de 8; 7,999...; et pour k= 1 et 63).
