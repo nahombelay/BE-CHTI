@@ -27,7 +27,7 @@ callback proc
 ;si c'est > positif on continue
 	
 	ldr		r3, [r0, #E_SON]
-	ldr		r4, [r3, r2];on a son[position]
+	ldrsh	r4, [r3, r2, lsl #1];on a son[position]
 	ldr		r5, [r0, #E_RES]; resolution 
 
 ;on applique la fonction affine pour améliorer le son
@@ -49,7 +49,7 @@ callback proc
 	
 fin_son
 	mov		r2, #0
-	str		r1, [r2]
+	str		r1, [r0, #E_POS]
 ;on retourne au prog principal
 	pop {lr, r4, r5}
 	bx 	lr
